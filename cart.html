@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shahs of Kabob - Your Cart</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="cart-style.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-top">
+            <p>News!</p>
+        </div>
+        <nav class="navbar container">
+            <div class="dropdown main-nav-dropdown">
+                <button class="dropbtn" aria-label="Main Menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="dropdown-content">
+                    <div class="dropdown-header">
+                        <span class="title">MENU</span>
+                        <span class="close-btn">&times;</span>
+                    </div>
+                    <a href="index.html">Home</a>
+                    <a href="#about-us">About Us</a>
+                    <a href="#services">Services</a>
+                    <a href="#contact">Contact</a>
+                    <div class="dropdown-section-title">Menu</div>
+                    <a href="full-menu.html">Full Menu</a>
+                    <a href="#category2">Specials</a>
+                    <a href="#category3">Other</a>
+                    <div class="dropdown-divider"></div>
+                    <a id="login" href="login.html">Login</a>
+                </div>
+            </div>
+
+            <a href="index.html" class="logo-link">
+                <div class="logo">
+                    <img src="Imagen/shah+logo-1920w.webp" alt="Logo Shahs of Kabob">
+                    <span class="logo-name">Shahs of Kabob</span>
+                </div>
+            </a>
+            <div class="nav-icons">
+                <a href="login.html" class="nav-icon"><i class="fas fa-user"></i></a>
+                <a href="cart.html" class="nav-icon"><i class="fas fa-shopping-cart"></i></a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="page-load-animation">
+        <main class="main-content container">
+            <section class="cart-section">
+                <h1>Your Shopping Cart</h1>
+
+                <div class="cart-items">
+                    <div class="cart-item">
+                        <img src="Imagen/Joojeh SMALL PLATE.jpg" alt="Joojeh Kabob" class="cart-item-image">
+                        <div class="cart-item-details">
+                            <h2 class="cart-item-title">One Joojeh Kabob (Marinated Chicken Skewer)</h2>
+                            <p class="cart-item-price">$13.00</p>
+                            <div class="cart-item-quantity">
+                                <button class="quantity-btn" data-action="decrease">-</button>
+                                <input type="number" value="1" min="1" class="quantity-input">
+                                <button class="quantity-btn" data-action="increase">+</button>
+                            </div>
+                        </div>
+                        <button class="remove-item-btn"><i class="fas fa-trash-alt"></i></button>
+                    </div>
+                </div>
+
+                <div class="cart-summary">
+                    <div class="summary-line">
+                        <span>Subtotal:</span>
+                        <span>$13.00</span>
+                    </div>
+                    <div class="summary-line">
+                        <span>Shipping:</span>
+                        <span>$5.00</span>
+                    </div>
+                    <div class="summary-line total">
+                        <span>Total:</span>
+                        <span>$18.00</span>
+                    </div>
+                    <button class="checkout-button">Proceed to Checkout</button>
+                    <a href="index.html" class="continue-shopping">Continue Shopping</a>
+                </div>
+
+                <p class="empty-cart-message" style="display:none;">Your cart is empty.</p>
+            </section>
+
+            <section class="newsletter-section">
+                <h3>SUBSCRIBE AND RECEIVE <br> A US$5 ON YOUR FIRST PURCHASE.</h3>
+                <p>*AVAILABLE FOR PURCHASES OVER US$50</p>
+                <div class="newsletter-form">
+                    <input type="email" placeholder="Email address">
+                    <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                </div>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/shahsofkabob"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/shahsofkabobmiami/?hl=en"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

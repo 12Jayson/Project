@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shahs of Kabob - Full Menu</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="full-menu-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-top">
+            <p>News!</p>
+        </div>
+        <nav class="navbar container">
+            <div class="dropdown main-nav-dropdown">
+                <button class="dropbtn" aria-label="Main Menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="dropdown-content">
+                    <div class="dropdown-header">
+                        <span class="title">MENU</span>
+                        <span class="close-btn">&times;</span>
+                    </div>
+                    <a href="index.html">Home</a>
+                    <a href="#about-us">About Us</a>
+                    <a href="#services">Services</a>
+                    <a href="#contact">Contact</a>
+                    <div class="dropdown-section-title">Menu</div>
+                    <a href="full-menu.html">Full Menu</a>
+                    <a href="#category2">Specials</a>
+                    <a href="#category3">Other</a>
+                    <div class="dropdown-divider"></div>
+                    <a id="login" href="login.html">Login</a>
+                </div>
+            </div>
+
+            <a href="index.html" class="logo-link">
+                <div class="logo">
+                    <img src="Imagen/shah+logo-1920w.webp" alt="Logo Shahs of Kabob">
+                    <span class="logo-name">Shahs of kabob</span>
+                </div>
+            </a>
+
+            <div class="nav-icons">
+                <a href="#" class="nav-icon search-icon" id="openSearchButton"><i class="fas fa-search"></i></a>
+                <a href="login.html" class="nav-icon"><i class="fas fa-user"></i></a>
+                <a href="cart.html" class="nav-icon"><i class="fas fa-shopping-cart"></i></a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="search-overlay" id="searchOverlay">
+        <div class="search-bar-container">
+            <input type="text" id="searchInput" placeholder="Search for products...">
+            <button id="searchButton"><i class="fas fa-search"></i></button>
+            <button id="closeSearchButton" class="close-search-btn">&times;</button>
+        </div>
+        <div class="search-results-container" id="searchResultsContainer">
+            </div>
+    </div>
+    
+    <div class="page-load-animation">
+        <main class="main-content container">
+            <section class="menu-hero">
+                <h1>Our Full Menu</h1>
+                <p>Explore a delightful selection of authentic Persian dishes.</p>
+            </section>
+
+            <nav class="menu-category-nav" id="menuCategoryNav">
+                <ul class="category-list">
+                    <li><a href="#starters"><span class="category-shape">Starters</span></a></li>
+                    <li><a href="#kabobs"><span class="category-shape">Kabobs</span></a></li>
+                    <li><a href="#stews-rice"><span class="category-shape">Stews & Rice</span></a></li>
+                    <li><a href="#desserts"><span class="category-shape">Desserts</span></a></li>
+                    <li><a href="#drinks"><span class="category-shape">Drinks</span></a></li>
+                </ul>
+            </nav>
+            <section class="menu-categories">
+                <div class="category-section" id="starters">
+                    <h2>Starters</h2>
+                    <div class="product-grid">
+                        <div class="product-card">
+                            <div class="product-image-wrapper">
+                                <img src="Imagen/Kashk Badejman (Vegan).jpg" alt="Kashk Badejman">
+                            </div>
+                            <p class="product-title">Kashk Badejman (Vegan)</p>
+                            <p class="product-description">Fried eggplant with mint & onion with whey dressing.</p>
+                            <p class="product-price">$8.00</p>
+                            <button class="add-to-cart-btn">Add to Cart <i class="fas fa-cart-plus"></i></button>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-image-wrapper">
+                                <img src="Imagen/salad.webp" alt="Shirazi Salad">
+                            </div>
+                            <p class="product-title">Shirazi Salad</p>
+                            <p class="product-description">Fresh cucumber, tomato, and onion salad with lime juice.</p>
+                            <p class="product-price">$6.00</p>
+                            <button class="add-to-cart-btn">Add to Cart <i class="fas fa-cart-plus"></i></button>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-image-wrapper">
+                                <img src="Imagen/tzatziki.webp" alt="Mast-o-Khiar">
+                            </div>
+                            <p class="product-title">Mast-o-Khiar</p>
+                            <p class="product-description">Creamy yogurt with cucumber and mint.</p>
+                            <p class="product-price">$5.00</p>
+                            <button class="add-to-cart-btn">Add to Cart <i class="fas fa-cart-plus"></i></button>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-image-wrapper">
+                                <img src="Imagen/tahdig.webp" alt="Tahdig">
+                            </div>
+                            <p class="product-title">Tahdig (Crispy Rice)</p>
+                            <p class="product-description">Crispy bottom layer of rice, a Persian delicacy.</p>
+                            <p class="product-price">$7.00</p>
+                            <button class="add-to-cart-btn">Add to Cart <i class="fas fa-cart-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="category-section" id="kabobs">
+                    <h2>Kabobs</h2>
+                    <div class="product-grid">
+                        <div class="product-card">
+                            <div class="product-image-wrapper">
+                                <img src="Imagen/Joojeh SMALL PLATE.jpg" alt="Joojeh Kabob">
+                            </div>
+                            <p class="product-title">One Joojeh Kabob (Small)</p>
+                            <p class="product-description">Marinated chicken skewer, grilled to perfection.</p>
+                            <p class="product-price">$13.00</p>
+                            <button class="add-to-cart-btn">Add to Cart <i class="fas fa-cart-plus"></i></button>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-image-wrapper">
+                                <img src="Imagen/Joojeh Sultani LARGE PLATE.jpg" alt="Joojeh Sultani">
+                            </div>
+                            <p class="product-title">Joojeh Sultani (Large)</p>
+                            <p class="product-description">Chicken skewer & Koobideh skewer.</p>
+                            <p class="product-price">$18.00</p>
+                            <button class="add-to-cart-btn">Add to Cart <i class="fas fa-cart-plus"></i></button>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-image-wrapper">
+                                <img src="Imagen/Koobideh LARGE PLATE.jpg" alt="Koobideh Kabob">
+                            </div>
+                            <p class="product-title">Two Koobideh Kabobs</p>
+                            <p class="product-description">Two skewers of ground beef & lamb, seasoned.</p>
+                            <p class="product-price">$18.00</p>
+                            <button class="add-to-cart-btn">Add to Cart <i class="fas fa-cart-plus"></i></button>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-image-wrapper">
+                                <img src="Imagen/Barg Kabob.jpg" alt="Barg Kabob">
+                            </div>
+                            <p class="product-title">Barg Kabob</p>
+                            <p class="product-description">Thinly sliced marinated beef tenderloin.</p>
+                            <p class="product-price">$22.00</p>
+                            <button class="add-to-cart-btn">Add to Cart <i class="fas fa-cart-plus"></i></button>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-image-wrapper">
+                                <img src="Imagen/chicken_koobideh.jpg" alt="Chicken Koobideh">
+                            </div>
+                            <p class="product-title">Chicken Koobideh</p>
+                            <p class="product-description">Two skewers of ground chicken, grilled.</p>
+                            <p class="product-price">$17.00</p>
+                            <button class="add-to-cart-btn">Add to Cart <i class="fas fa-cart-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="category-section" id="stews-rice">
+                    <h2>Stews & Rice</h2>
+                    <div class="product-grid">
+                        <div class="product-card">
+                            <div class="product-image-wrapper">
+                                <img src="Imagen/Ghormeh Sabzi.jpg" alt="Ghormeh Sabzi">
+                            </div>
+                            <p class="product-title">Ghormeh Sabzi</p>
+                            <p class="product-description">Traditional herb stew with beef, served with rice.</p>
+                            <p class="product-price">$15.00</p>
+                            <button class="add-to-cart-btn">Add to Cart <i class="fas fa-cart-plus"></i></button>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-image-wrapper">
+                                <img src="Imagen/Fesenjan.jpg" alt="Fesenjan">
+                            </div>
+                            <p class="product-title">Fesenjan</p>
+                            <p class="product-description">Pomegranate and walnut stew with chicken, served with rice.</p>
+                            <p class="product-price">$16.00</p>
+                            <button class="add-to-cart-btn">Add to Cart <i class="fas fa-cart-plus"></i></button>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-image-wrapper">
+                                <img src="Imagen/baghali_polo.webp" alt="Baghali Polo">
+                            </div>
+                            <p class="product-title">Baghali Polo</p>
+                            <p class="product-description">Dill and fava bean rice with lamb shank.</p>
+                            <p class="product-price">$20.00</p>
+                            <button class="add-to-cart-btn">Add to Cart <i class="fas fa-cart-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="category-section" id="desserts">
+                    <h2>Desserts</h2>
+                    <div class="product-grid">
+                        <div class="product-card">
+                            <div class="product-image-wrapper">
+                                <img src="Imagen/Baklava.jpg" alt="Baklava">
+                            </div>
+                            <p class="product-title">Baklava</p>
+                            <p class="product-description">Sweet pastry with layers of filo, nuts, and syrup.</p>
+                            <p class="product-price">$4.00</p>
+                            <button class="add-to-cart-btn">Add to Cart <i class="fas fa-cart-plus"></i></button>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-image-wrapper">
+                                <img src="Imagen/Saffron_ice_cream.jpg" alt="Bastani Sonnati">
+                            </div>
+                            <p class="product-title">Bastani Sonnati</p>
+                            <p class="product-description">Traditional Persian saffron ice cream with pistachio.</p>
+                            <p class="product-price">$6.00</p>
+                            <button class="add-to-cart-btn">Add to Cart <i class="fas fa-cart-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="category-section" id="drinks">
+                    <h2>Drinks</h2>
+                    <div class="product-grid">
+                        <div class="product-card">
+                            <div class="product-image-wrapper">
+                                <img src="Imagen/doogh.webp" alt="Doogh">
+                            </div>
+                            <p class="product-title">Doogh</p>
+                            <p class="product-description">Traditional Persian yogurt drink with mint.</p>
+                            <p class="product-price">$3.50</p>
+                            <button class="add-to-cart-btn">Add to Cart <i class="fas fa-cart-plus"></i></button>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-image-wrapper">
+                                <img src="Imagen/tea.webp" alt="Persian Tea">
+                            </div>
+                            <p class="product-title">Persian Tea</p>
+                            <p class="product-description">Black tea, a warm and comforting beverage.</p>
+                            <p class="product-price">$2.50</p>
+                            <button class="add-to-cart-btn">Add to Cart <i class="fas fa-cart-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="newsletter-section">
+                <h3>SUBSCRIBE AND RECEIVE <br> A US$5 ON YOUR FIRST PURCHASE.</h3>
+                <p>*AVAILABLE FOR PURCHASES OVER US$50</p>
+                <div class="newsletter-form">
+                    <input type="email" placeholder="Email address">
+                    <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                </div>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/shahsofkabob"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/shahsofkabobmiami/?hl=en"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+    
+    <button id="scrollToTopBtn" title="Volver arriba">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+</body>
+</html>

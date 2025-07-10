@@ -1,0 +1,1025 @@
+/* style.css */
+
+/* Reset básico para el modelo de caja */
+html {
+    box-sizing: border-box;
+    overflow-x: hidden; /* Asegura que no haya scroll horizontal no deseado */
+}
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+    color: #333;
+    -webkit-text-size-adjust: 100%; /* Prevent text zooming on iOS */
+    overflow-x: hidden; /* Asegura que no haya scroll horizontal no deseado */
+    
+    /* AÑADIDO: Padding superior para evitar que el contenido quede bajo el header fijo */
+    padding-top: 90px; /* Ajusta este valor si la altura de tu header fijo es diferente */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Header principal - AHORA ES FIJO */
+.header {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    /* MODIFICADO: El header completo es fijo */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Asegura que esté por encima de todo */
+}
+
+.header-top {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 8px 0;
+    font-size: 0.8em;
+}
+
+.navbar {
+    display: flex;
+    justify-content: flex-start; /* Alinea los elementos al inicio (izquierda) por defecto */
+    align-items: center;
+    padding: 10px 15px;
+    
+    /* ELIMINADO: position, top, width, z-index de aquí, ya que el .header padre es fijo */
+    /* background-color: #fff; */ /* Lo mantengo si quieres un fondo explícito para la navbar */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Lo mantengo para la línea visual */
+    gap: 20px; /* Espacio entre los elementos de la navbar */
+}
+
+/* NUEVO: Estilos para el enlace del logo */
+.logo-link {
+    text-decoration: none; /* Elimina el subrayado predeterminado del enlace */
+    color: inherit; /* Hereda el color del texto de su contenedor, aunque el logo y el nombre tienen sus propios colores */
+    /* Este margin-right es crucial para que empuje el resto de elementos a la derecha */
+    margin-right: auto; 
+    display: flex; /* Asegura que el enlace se comporte como un flex item y que el div.logo esté bien posicionado */
+    align-items: center; /* Alinea verticalmente el logo dentro del enlace */
+}
+
+.navbar .logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    /* ELIMINADO: margin-right: auto; ahora lo maneja el .logo-link */
+}
+
+.navbar .logo img {
+    height: 40px;
+    width: auto;
+}
+
+.navbar .logo .logo-name {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #333;
+    white-space: nowrap;
+}
+
+.nav-icons { /* Contenedor para los iconos de la derecha */
+    display: flex;
+    gap: 15px; /* Espacio entre los iconos */
+    align-items: center;
+}
+
+.nav-icon {
+    font-size: 1.5em;
+    color: #333;
+    text-decoration: none; /* Elimina el subrayado de los enlaces de iconos */
+    padding: 0 8px; /* Pequeño padding alrededor del icono */
+}
+
+.nav-icon:hover {
+    color: #6a0dad; /* Púrpura para los iconos al pasar el ratón */
+}
+
+/* Hero Section */
+.hero-section {
+    background-color: #6a0dad; /* A purple color */
+    color: #fff;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="rgba(255,255,255,0.1)"/></svg>'), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect x="10" y="10" width="80" height="80" fill="rgba(255,255,255,0.1)" transform="rotate(45 50 50)"/></svg>');
+    background-repeat: repeat;
+    background-size: 50px, 70px;
+    opacity: 0.3;
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 0 15px;
+}
+
+.hero-text {
+    font-size: 1.1em;
+    margin-bottom: 5px;
+}
+
+.hero-text .highlight {
+    color: #ffd700; /* Gold-like color for highlight */
+    font-weight: bold;
+}
+
+.hero-title {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin: 5px 0;
+    text-transform: uppercase;
+}
+
+.hero-subtitle {
+    font-size: 0.9em;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+.hero-buttons {
+    margin-bottom: 20px;
+}
+
+.hero-button {
+    background-color: transparent; /* Fondo transparente para el botón del hero */
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.hero-button:hover {
+    background-color: rgba(255,255,255,0.2);
+}
+
+.hero-image {
+    position: relative;
+    z-index: 2;
+    margin-top: 15px;
+}
+
+/* Novelties Section */
+.novelties-section {
+    padding: 20px 15px;
+    background-color: #f2f2f2;
+}
+
+.novelties-section h2 {
+    text-align: center;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    position: relative;
+    text-transform: uppercase;
+}
+
+.novelties-section h2::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: #6a0dad; /* Purple line */
+    margin: 10px auto 0;
+}
+
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.product-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 15px;
+    text-align: center;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    
+    flex-basis: calc(25% - 20px);
+    min-width: 230px;
+}
+
+.product-image-wrapper {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    margin: 0 auto 10px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product-title {
+    font-size: 0.9em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    height: 3em;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.product-price {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #6a0dad; /* Purple color */
+}
+
+/* Video Section below products */
+.video-section {
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+    color: #fff;
+    background-color: #333; /* Fallback si el video no carga */
+    margin-top: 30px;
+    padding: 0 15px; /* Añadido padding para que el contenido no se pegue a los bordes */
+}
+
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.video-overlay-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    max-width: none;
+}
+
+.video-overlay-content h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.video-overlay-content p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.video-overlay-content .hero-button {
+    margin-top: 10px;
+    /* El botón ya tiene los estilos del hero-button, así que será transparente con borde blanco */
+}
+
+
+/* Footer de suscripción (Newsletter Section) */
+.newsletter-section {
+    background-color: #444; /* Color oscuro del footer */
+    color: #fff;
+    padding: 30px 15px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.newsletter-section h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.newsletter-section p {
+    font-size: 0.9em;
+    margin-bottom: 20px;
+}
+
+.newsletter-form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.newsletter-form input[type="email"] {
+    flex-grow: 1;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.newsletter-form button {
+    background-color: #6a0dad; /* Púrpura para el botón de suscripción */
+    color: #fff;
+    border: none;
+    padding: 12px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease; /* Transición para el hover */
+}
+
+.newsletter-form button:hover {
+    background-color: #5a0c9c; /* Un púrpura ligeramente más oscuro para el hover */
+}
+
+.social-icons {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-icons a {
+    color: #fff;
+    font-size: 1.8em;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.social-icons a:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Media query para adaptar el diseño del formulario en pantallas pequeñas */
+@media (max-width: 600px) {
+    .newsletter-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .newsletter-form input,
+    .newsletter-form button {
+        width: 100%;
+        margin-left: 0;
+    }
+    .newsletter-form button {
+        margin-top: 10px;
+    }
+}
+
+/* Media query para móviles (hasta 767px de ancho) */
+@media (max-width: 767px) {
+    .product-card {
+        flex-basis: calc(50% - 15px);
+        min-width: 140px;
+    }
+
+    .product-image-wrapper {
+        width: 110px;
+        height: 110px;
+    }
+
+    .product-title {
+        font-size: 0.8em;
+    }
+    .product-price {
+        font-size: 1em;
+    }
+
+    /* ESTILOS DEL DROPDOWN PRINCIPAL (BOTÓN HAMBURGUESA) PARA MÓVIL */
+    .dropdown.main-nav-dropdown {
+        display: block; /* Muestra el botón de hamburguesa en móvil */
+        order: -1; /* Mueve el dropdown al inicio (izquierda) de la navbar */
+        margin-right: 15px; /* Espacio a la derecha del botón para que no se pegue al logo */
+    }
+
+    .navbar {
+        justify-content: space-between; /* Espacia los elementos: menú, logo, iconos */
+        padding: 10px 15px;
+    }
+
+    /* Ajuste para el enlace del logo en móvil */
+    .logo-link {
+        margin-left: auto; /* Para centrar el logo en móvil entre el menú y los iconos */
+        margin-right: auto; /* Permite que el logo se centre cuando hay un elemento a la izquierda (menú) y a la derecha (iconos) */
+    }
+
+    .nav-icons {
+        gap: 10px; /* Menos espacio entre iconos en móvil */
+    }
+    .nav-icon {
+        font-size: 1.3em;
+    }
+
+    .dropbtn {
+        padding: 5px;
+        font-size: 1.5em; /* Tamaño del icono de hamburguesa */
+        background: none;
+        border: none;
+        color: #333; /* Color del icono */
+        cursor: pointer;
+    }
+    #login{
+        background-color: #6a0dad;
+        text-align: center;
+        color: white;
+    }
+    #login:hover{
+        color: gray;
+    }
+
+    /* ESTILOS DEL CONTENIDO DEL MENÚ DESPLEGABLE PARA MÓVIL (Full screen) */
+    .dropdown-content {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        overflow-y: auto; /* Permite scroll si el contenido es largo */
+        background-color: #fff; /* Fondo blanco del menú desplegable */
+        box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        border-radius: 0; /* Sin bordes redondeados para fullscreen */
+        padding: 0;
+        z-index: 1001; /* Asegura que esté por encima de todo */
+        
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease-out, visibility 0.3s ease-out; /* Transición agregada */
+    }
+
+    /* Clase que JavaScript agregará para mostrar el menú */
+    .dropdown.active .dropdown-content {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* Header del menú desplegable (con título y botón de cerrar) */
+    .dropdown-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 20px;
+        background-color: #f5f5f5; /* Fondo gris claro para el encabezado */
+        border-bottom: 1px solid #eee;
+    }
+
+    .dropdown-header .close-btn {
+        font-size: 1.8em;
+        color: #333;
+        cursor: pointer;
+        padding: 5px;
+    }
+
+    .dropdown-header .title {
+        font-size: 1.2em;
+        font-weight: bold;
+        color: #333; /* Color de texto para el título "MENÚ" */
+        text-transform: uppercase;
+    }
+
+    /* Estilos para los elementos de enlace dentro del menú */
+    .dropdown-content a {
+        display: block;
+        padding: 15px 20px;
+        font-size: 1.1em;
+        text-decoration: none;
+        color: #333; /* Color de texto oscuro para los enlaces */
+        border-bottom: 1px solid #f2f2f2;
+        transition: background-color 0.2s ease;
+    }
+
+    .dropdown-content a:hover {
+        background-color: #f0f0f0;
+    }
+    
+    /* Estilos para los títulos de sección (Menú, Nosotros) */
+    .dropdown-section-title {
+        display: block;
+        padding: 15px 20px;
+        background-color: #fff; /* Fondo blanco para las secciones */
+        color: #6a0dad; /* Púrpura para los títulos de sección */
+        font-weight: bold;
+        text-transform: uppercase;
+        border-bottom: 1px solid #eee;
+        margin: 0;
+    }
+
+    /* Estilo para el divisor (línea horizontal) */
+    .dropdown-divider {
+        height: 1px;
+        background-color: #eee;
+        margin: 10px 0;
+    }
+
+    /* Ajusta el padding de las secciones en móvil */
+    .hero-section,
+    .novelties-section,
+    .video-section,
+    .newsletter-section {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+/* Desktop adjustments (desde 768px en adelante) */
+@media (min-width: 768px) {
+    .header-top {
+        font-size: 0.9em;
+    }
+
+    .navbar {
+        padding: 10px 30px;
+        /* En desktop, queremos que el logo esté más a la izquierda, no centrado por auto margins */
+        justify-content: flex-start; /* Alinea los elementos al inicio */
+        gap: 30px; /* Espacio entre los elementos de la navbar en desktop */
+    }
+
+    /* ELIMINADO: .navbar .logo margin-right: auto; ahora lo maneja el .logo-link */
+    .navbar .logo {
+        margin-left: 0; /* Asegura que el logo no tenga margen izquierdo si se había centrado */
+    }
+
+    .nav-icons {
+        gap: 20px;
+    }
+    .nav-icon {
+        font-size: 1.8em;
+    }
+
+    .hero-section {
+        flex-direction: row;
+        text-align: left;
+        padding: 40px 30px;
+        justify-content: space-around;
+    }
+
+    .hero-content {
+        max-width: 50%;
+        padding: 0;
+    }
+
+    .hero-image {
+        margin-top: 0;
+        max-width: 40%;
+    }
+
+    .hero-title {
+        font-size: 3.5em;
+    }
+
+    .hero-text {
+        font-size: 1.3em;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1em;
+    }
+
+    .novelties-section {
+        padding: 40px 30px;
+    }
+
+    .product-grid {
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .video-overlay-content h2 {
+        font-size: 2.5em;
+    }
+    .video-overlay-content p {
+        font-size: 1.2em;
+    }
+
+    /* Asegura el padding de las secciones en desktop */
+    .hero-section,
+    .novelties-section,
+    .video-section,
+    .newsletter-section {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    /* ESTILOS PARA EL DROPDOWN PRINCIPAL (BOTÓN HAMBURGUESA) EN DESKTOP/TABLET */
+    /* Para que sea visible en desktop */
+    .dropdown.main-nav-dropdown {
+        display: block; 
+    }
+
+    /* COMPORTAMIENTO :HOVER EN DESKTOP/TABLET */
+    .dropdown.main-nav-dropdown:hover .dropdown-content {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* ESTILOS DEL CONTENIDO DEL DROPDOWN EN DESKTOP/TABLET */
+    .dropdown-content {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        min-width: 200px;
+        width: auto;
+        height: auto;
+        background-color: #fff;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        border-radius: 5px;
+        overflow-y: auto;
+        padding: 0; /* Aseguramos que no haya padding global aquí, los enlaces lo tendrán */
+        max-height: 400px; /* Limita la altura y permite scroll si hay muchos elementos */
+        
+        /* Estado inicial oculto y transición para el hover */
+        opacity: 0; 
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease; 
+    }
+
+    /* Asegúrate de que los elementos "solo para móvil" estén ocultos en desktop si no los quieres */
+    .dropdown-content .dropdown-header, 
+    .dropdown-content .close-btn,
+    .dropdown-content .dropdown-section-title,
+    .dropdown-content .dropdown-divider {
+        display: none;
+    }
+
+    /* Estilos para los enlaces dentro del dropdown en desktop */
+    .dropdown-content a {
+        color: #333; /* Color de texto oscuro para los enlaces */
+        padding: 10px 20px; /* Padding adecuado para los enlaces */
+        text-decoration: none;
+        display: block;
+        border-bottom: none; /* Quita el borde inferior que podría venir de móvil */
+        transition: background-color 0.2s ease, color 0.2s ease;
+        white-space: nowrap; /* Evita que el texto se rompa en varias líneas */
+    }
+    .dropdown-content a:hover {
+        background-color: #f0f0f0; /* Fondo gris claro al pasar el ratón */
+        color: #6a0dad; /* Púrpura al pasar el ratón */
+    }
+
+    /* Estilo específico para el enlace de Login en el dropdown en desktop */
+    #login {
+        background-color: transparent; /* Quita el fondo púrpura del modo móvil */
+        color: #333; /* Vuelve al color de texto estándar */
+        text-align: left; /* Alinea a la izquierda */
+        font-weight: normal; /* Si se hizo bold en móvil, volver a normal */
+    }
+    #login:hover {
+        background-color: #f0f0f0;
+        color: #6a0dad;
+    }
+
+    /* Otros ajustes si es necesario para el navbar en desktop */
+    .navbar {
+        /* Asegurarse de que el dropdown no interfiera con otros elementos */
+        align-items: flex-start; /* Para que el dropdown se alinee con la parte superior del botón */
+    }
+}
+
+/* Media query para ajustar el tamaño del texto del logo en pantallas muy pequeñas */
+@media (max-width: 480px) {
+    .navbar .logo .logo-name {
+        font-size: 0.9em;
+    }
+}
+
+/* ESTILOS PARA EL DROPDOWN ÚNICO (GLOBAL) */
+.dropdown {
+    position: relative;
+    /* `display` se controla por media query para el .main-nav-dropdown */
+}
+
+/* Estilos para el botón que abre el dropdown (el ícono de hamburguesa) */
+.dropbtn {
+    background-color: transparent;
+    color: #333; /* Color del ícono de hamburguesa */
+    padding: 10px 0;
+    font-size: 1.1em;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: bold;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+    color: #6a0dad; /* Púrpura para el ícono de hamburguesa al pasar el ratón */
+}
+
+/* Estado inicial del contenido del dropdown (oculto) - GLOBAL */
+/* Estos estilos son los que JavaScript manipula con la clase 'active' para móvil.
+   En desktop, serán sobrescritos por la media query para usar :hover.
+*/
+.dropdown-content {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* CLASE QUE JavaScript AGREGARÁ PARA MOSTRAR EL MENÚ EN MÓVIL (MANTENER) */
+@media (max-width: 767px) {
+    .dropdown.active .dropdown-content {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+/* --- Estilos para la Barra de Búsqueda Desplegable (NUEVO) --- */
+.search-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Ocupa toda la pantalla para un efecto de superposición */
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo semi-transparente oscuro */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Alinea la barra en la parte superior */
+    padding-top: 100px; /* Espacio desde la parte superior, ajusta si tu header es más alto */
+    z-index: 1100; /* Mayor que el header para superponerse */
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none; /* Permite clics a través del overlay cuando está oculto */
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.search-overlay.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto; /* Permite interacciones cuando está activo */
+}
+
+.search-bar-container {
+    background-color: #fff; /* Fondo blanco para la barra de búsqueda */
+    width: 90%;
+    max-width: 600px;
+    border-radius: 5px;
+    display: flex;
+    padding: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    position: relative; /* Para posicionar el botón de cierre */
+
+    /* Animación de entrada */
+    transform: translateY(-50px); /* Empieza un poco arriba */
+    opacity: 0;
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+.search-overlay.active .search-bar-container {
+    transform: translateY(0); /* Desplazamiento a su posición final */
+    opacity: 1;
+}
+
+#searchInput {
+    flex-grow: 1;
+    border: 1px solid #ddd;
+    padding: 10px 15px;
+    border-radius: 4px;
+    font-size: 1em;
+    outline: none;
+}
+
+#searchInput:focus {
+    border-color: #6a0dad;
+}
+
+#searchButton {
+    background-color: #6a0dad; /* Púrpura para el botón de búsqueda */
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    margin-left: 10px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.2s ease;
+}
+
+#searchButton:hover {
+    background-color: #5a0c9c; /* Un púrpura ligeramente más oscuro */
+}
+
+.close-search-btn {
+    background: none;
+    border: none;
+    color: #fff; /* Color blanco para que contraste con el overlay oscuro */
+    font-size: 2em;
+    position: absolute;
+    top: -40px; /* Colocado encima de la barra */
+    right: 0;
+    cursor: pointer;
+    line-height: 1; /* Para alinear el 'x' */
+    transition: color 0.2s ease;
+}
+
+.close-search-btn:hover {
+    color: #ddd;
+}
+
+/* Media Query para pantallas pequeñas */
+@media (max-width: 600px) {
+    .search-bar-container {
+        width: 95%; /* Un poco más de ancho en móviles */
+        padding: 8px;
+    }
+    #searchInput {
+        padding: 8px 10px;
+    }
+    #searchButton {
+        padding: 8px 12px;
+        font-size: 0.9em;
+    }
+    .close-search-btn {
+        font-size: 1.8em;
+        top: -35px; /* Ajuste para móviles */
+        right: 5px;
+    }
+    .search-overlay {
+        padding-top: 80px; /* Ajuste del padding superior para móviles */
+    }
+}
+
+/* --- ESTILOS PARA LA ANIMACIÓN AL CARGAR LA PÁGINA --- */
+.page-load-animation {
+    opacity: 0;
+    transform: translateY(20px); /* Empieza 20px más abajo */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* Duración y suavidad */
+}
+
+.page-load-animation.loaded {
+    opacity: 1;
+    transform: translateY(0); /* Vuelve a su posición original */
+}
+
+/* Asegurarse de que el main-content no tenga márgenes que interfieran */
+.main-content {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+/* --- ESTILOS PARA LOS RESULTADOS DE BÚSQUEDA --- */
+.search-results-container {
+    background-color: #fff; /* Fondo blanco sólido para los resultados */
+    border: 1px solid #ddd; /* Borde del color gris claro que ya usas */
+    border-top: none; /* Sin borde superior si va debajo de la barra */
+    max-height: 400px; /* Limita la altura y permite scroll */
+    overflow-y: auto;
+    width: 100%;
+    max-width: 600px; /* Asegura que no sea demasiado ancho */
+    margin-top: 10px; /* Espacio entre la barra y los resultados */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 0 0 8px 8px; /* Bordes redondeados en la parte inferior */
+    padding: 10px;
+    display: none; /* Por defecto estará oculto, JS lo mostrará */
+    flex-direction: column; /* Para apilar los ítems verticalmente */
+    gap: 10px; /* Espacio entre los ítems de resultado */
+}
+
+/* Estilos para cada ítem de resultado individual */
+.search-result-item {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    background-color: #f5f5f5; /* Fondo ligero para cada ítem (tu color #f5f5f5) */
+    border-radius: 5px;
+    gap: 15px;
+    cursor: pointer; /* Para indicar que es clickeable, si implementas navegación */
+    transition: background-color 0.2s ease;
+}
+
+.search-result-item:hover {
+    background-color: #e0e0e0; /* Un gris un poco más oscuro al pasar el ratón */
+}
+
+.search-result-item .result-image-wrapper {
+    width: 60px; /* Tamaño de la imagen del resultado */
+    height: 60px;
+    overflow: hidden;
+    border-radius: 5px;
+    flex-shrink: 0; /* Evita que la imagen se encoja */
+}
+
+.search-result-item .result-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.search-result-item .result-info {
+    flex-grow: 1; /* Permite que la info ocupe el espacio restante */
+}
+
+.search-result-item .result-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333; /* Tu color oscuro para títulos */
+    font-size: 1rem;
+}
+
+.search-result-item .result-description {
+    font-size: 0.85rem;
+    color: #777; /* Tu color gris para descripciones */
+    margin-bottom: 5px;
+}
+
+.search-result-item .result-price {
+    font-weight: bold;
+    color: #6a0dad; /* Tu color púrpura */
+    font-size: 0.95rem;
+}
+
+/* Estilo para el botón "Add to Cart" dentro de los resultados */
+.search-result-item .add-to-cart-btn-small {
+    background-color: #6a0dad; /* Tu color púrpura */
+    color: #fff;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: background-color 0.2s ease;
+    white-space: nowrap; /* Evita que el texto se rompa */
+}
+
+.search-result-item .add-to-cart-btn-small:hover {
+    background-color: #5a0c9c; /* Un tono un poco más oscuro de tu púrpura */
+}
+
+/* Mensaje de no resultados */
+.no-results {
+    text-align: center;
+    color: #777; /* Tu color gris para texto */
+    padding: 20px;
+    font-style: italic;
+}
+
+/* Ajustes para el search-overlay si es necesario */
+/* NOTA: Estos estilos ya están definidos más arriba, pero los repito para que veas que no hay conflicto */
+.search-overlay.active {
+    display: flex;
+    flex-direction: column; /* Para que los elementos se apilen verticalmente */
+    align-items: center; /* Centra el contenido horizontalmente */
+    justify-content: flex-start; /* Alinea el contenido arriba */
+    padding-top: 10vh; /* Ajusta esto según cuánto espacio quieras desde arriba */
+}
+
+.search-overlay .search-bar-container {
+    width: 100%;
+    max-width: 600px; /* Mismo ancho que el contenedor de resultados */
+}
+
+/* --- FIN ESTILOS PARA LOS RESULTADOS DE BÚSQUEDA --- */

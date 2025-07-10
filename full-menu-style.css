@@ -1,0 +1,435 @@
+/* full-menu-style.css */
+
+.main-content {
+    padding-top: 20px; /* Ajusta este padding para que el contenido no quede pegado al header y la nueva barra */
+    padding-bottom: 40px;
+}
+
+.menu-hero {
+    background-color: #6a0dad; /* Mismo púrpura que el hero principal */
+    color: #fff;
+    text-align: center;
+    padding: 40px 15px;
+    margin-bottom: 30px; /* Reducido para dejar espacio para la nueva barra de navegación */
+    border-radius: 8px; /* Pequeños bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.menu-hero h1 {
+    font-size: 2.8em;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.menu-hero p {
+    font-size: 1.1em;
+    opacity: 0.9;
+}
+
+/* --- ESTILOS PARA LA BARRA DE NAVEGACIÓN DEL MENÚ DE CATEGORÍAS --- */
+.menu-category-nav {
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    position: sticky; /* Hace que la barra se quede "pegada" al hacer scroll */
+    top: 90px; /* Ajusta este valor según la altura de tu header fijo para que se pegue justo debajo */
+    z-index: 999; /* Asegura que esté por encima de otros elementos al hacer scroll */
+    width: 100%;
+    text-align: center;
+}
+
+.category-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center; /* Centra los elementos */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+    gap: 15px; /* Espacio entre los elementos de la lista */
+}
+
+.category-list li a {
+    text-decoration: none;
+    color: #333; /* Color de texto predeterminado para el enlace */
+    white-space: nowrap; /* Evita que el texto se rompa */
+    display: block; /* Asegura que el enlace ocupe el espacio para que el hover funcione bien */
+    padding: 0; /* Reinicia el padding del enlace, el span lo manejará */
+}
+
+.category-shape {
+    /* ESTILOS PARA LA FORMA DE PÍLDORA */
+    display: inline-block; /* Para que el padding y el border-radius funcionen correctamente */
+    background-color: #f0f0f0; /* Color de fondo claro para la forma */
+    padding: 8px 20px; /* Relleno interno para la forma */
+    border-radius: 25px; /* Valor alto para crear la forma de píldora */
+    font-weight: bold;
+    color: #6a0dad; /* Color del texto dentro de la forma */
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1); /* Sutil sombra para dar profundidad */
+}
+
+.category-list li a:hover .category-shape {
+    background-color: #6a0dad; /* Fondo púrpura al pasar el mouse */
+    color: #fff; /* Texto blanco al pasar el mouse */
+    transform: translateY(-2px); /* Pequeño efecto de elevación al hacer hover */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Sombra más pronunciada al hacer hover */
+}
+
+/* ESTILO PARA LA CATEGORÍA ACTIVA (se aplicará y quitará rápidamente con JS) */
+.category-list li a.active .category-shape {
+    background-color: #6a0dad;
+    color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+/* --- FIN DE ESTILOS PARA LA BARRA DE NAVEGACIÓN DEL MENÚ --- */
+
+.menu-categories {
+    margin-top: 30px; /* Ajuste para dar espacio debajo de la barra de navegación */
+}
+
+.category-section {
+    background-color: #fff;
+    padding: 25px 20px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    /* Importante para el desplazamiento suave: */
+    scroll-margin-top: 180px; /* Ajusta este valor. Es la altura del header + la altura de la nueva barra + un poco de margen. */
+}
+
+.category-section h2 {
+    text-align: center;
+    font-size: 2em;
+    color: #6a0dad; /* Púrpura para los títulos de categoría */
+    margin-bottom: 25px;
+    position: relative;
+    text-transform: uppercase;
+}
+
+.category-section h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #ffd700; /* Línea dorada debajo del título */
+    margin: 10px auto 0;
+}
+
+.product-grid {
+    display: grid;
+    /* Por defecto, 2 columnas para tamaños de escritorio */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-content: center;
+}
+
+.product-card {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    padding: 15px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.product-image-wrapper {
+    /* Tamaño por defecto para escritorio, se ajustará en media queries */
+    width: 180px;
+    height: 180px;
+    overflow: hidden;
+    margin: 0 auto 10px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+}
+
+.product-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product-title {
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+    min-height: 2.6em; /* Asegura un espacio mínimo para títulos de 2 líneas */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.product-description {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 10px;
+    min-height: 3em; /* Espacio para descripción de 2-3 líneas */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.product-price {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #6a0dad; /* Púrpura para el precio */
+    margin-bottom: 15px;
+    margin-top: auto; /* Empuja el precio y el botón hacia abajo */
+}
+
+.add-to-cart-btn {
+    background-color: #6a0dad;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.95em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 100%; /* El botón ocupa todo el ancho de la tarjeta */
+    justify-content: center;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #5a0c9c;
+    transform: translateY(-2px);
+}
+
+/* --- ESTILOS PARA EL BOTÓN "VOLVER ARRIBA" --- */
+#scrollToTopBtn {
+    display: none; /* Oculto por defecto, se mostrará con JS */
+    position: fixed; /* Fijo en la pantalla */
+    bottom: 30px; /* Margen desde la parte inferior */
+    right: 30px; /* Margen desde la parte derecha */
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    background-color: rgba(106, 13, 173, 0.7); /* Púrpura semitransparente (último valor es la opacidad) */
+    color: white;
+    border: none;
+    border-radius: 50%; /* Lo hace redondo */
+    width: 50px; /* Ancho del botón */
+    height: 50px; /* Altura del botón */
+    font-size: 1.5em; /* Tamaño del icono de flecha */
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, opacity 0.3s ease, transform 0.2s ease;
+    display: flex; /* Para centrar el icono cuando se muestre */
+    justify-content: center; /* Centra horizontalmente el icono */
+    align-items: center; /* Centra verticalmente el icono */
+}
+
+#scrollToTopBtn:hover {
+    background-color: rgba(90, 12, 145, 0.9); /* Un poco menos transparente al pasar el mouse */
+    transform: translateY(-3px); /* Pequeña elevación al hacer hover */
+}
+
+/* Permite el desplazamiento suave nativo del navegador */
+html {
+  scroll-behavior: smooth;
+}
+
+/* --- Media Queries para responsividad --- */
+
+/* Estilos para pantallas grandes (desktops, monitores) - Más de 992px */
+@media (min-width: 993px) {
+    .product-grid {
+        /* Permite más de 2 columnas en pantallas muy grandes si hay espacio */
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+    .product-image-wrapper {
+        width: 180px;
+        height: 180px;
+    }
+}
+
+/* Estilos para tablets y laptops pequeños (de 601px a 992px) */
+@media (max-width: 992px) {
+    .menu-hero h1 {
+        font-size: 2.2em;
+    }
+    .menu-hero p {
+        font-size: 1.05em;
+    }
+    .category-section h2 {
+        font-size: 1.8em;
+    }
+    .product-grid {
+        /* Forzar 2 columnas aquí */
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px; /* Reducir gap para ganar espacio */
+    }
+    .product-image-wrapper {
+        /* Hacemos las imágenes más pequeñas para que quepan mejor en 2 columnas */
+        width: 130px; /* Reducido para este rango */
+        height: 130px; /* Reducido para este rango */
+    }
+    .product-title {
+        font-size: 1em; /* Ligeramente más pequeña */
+        min-height: 2.4em;
+    }
+    .product-description {
+        font-size: 0.85em; /* Ligeramente más pequeña */
+        min-height: 2.8em;
+    }
+    .product-price {
+        font-size: 1.2em; /* Ligeramente más pequeña */
+    }
+    .add-to-cart-btn {
+        padding: 8px 12px;
+        font-size: 0.9em;
+    }
+
+    /* Ajuste para la barra de navegación sticky en tablets */
+    .menu-category-nav {
+        top: 80px; /* Ajusta si el header es más pequeño en tablets */
+        padding: 8px 0;
+    }
+    .category-shape {
+        padding: 6px 15px; /* Ajuste el padding para pantallas más pequeñas */
+        font-size: 0.9em;
+    }
+    .category-section {
+        scroll-margin-top: 150px; /* Ajusta para la nueva altura del sticky */
+    }
+    #scrollToTopBtn {
+        bottom: 25px;
+        right: 25px;
+        width: 48px;
+        height: 48px;
+        font-size: 1.4em;
+    }
+}
+
+/* Estilos para la mayoría de los teléfonos (hasta 600px de ancho) */
+@media (max-width: 380px) {
+    .menu-hero {
+        padding: 30px 10px;
+    }
+    .menu-hero h1 {
+        font-size: 1.8em;
+    }
+    .category-section {
+        padding: 15px 10px;
+    }
+    .category-section h2 {
+        font-size: 1.4em;
+    }
+    .product-grid {
+        /* ¡Aquí forzamos una sola columna para móviles! */
+        grid-template-columns: 1fr;
+        gap: 20px; /* Restauramos el gap para una columna */
+    }
+    .product-image-wrapper {
+        /* Restauramos el tamaño de la imagen para que se vea bien en una columna */
+        width: 180px;
+        height: 180px;
+    }
+    .product-title {
+        font-size: 1.1em;
+        min-height: auto;
+    }
+    .product-description {
+        font-size: 0.9em;
+        min-height: auto;
+    }
+    .product-price {
+        font-size: 1.3em;
+    }
+    .add-to-cart-btn {
+        padding: 10px 15px;
+        font-size: 0.95em;
+    }
+
+    /* Ajuste para la barra de navegación sticky en móviles */
+    .menu-category-nav {
+        top: 70px; /* Ajusta si el header es más pequeño en móviles */
+        padding: 6px 0;
+    }
+    .category-list {
+        gap: 8px; /* Menor espacio entre elementos */
+    }
+    .category-shape {
+        padding: 5px 12px;
+        font-size: 0.8em;
+        border-radius: 20px; /* Un poco menos redondeado para tamaños pequeños */
+    }
+    .category-list li a {
+        width: auto;
+    }
+    .category-section {
+        scroll-margin-top: 130px; /* Ajusta para la nueva altura del sticky */
+    }
+    #scrollToTopBtn {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+        font-size: 1.3em;
+    }
+}
+
+/* Opcional: Un breakpoint para móviles muy pequeños (menores de 320px, por ejemplo) */
+@media (max-width: 320px) {
+    .menu-hero h1 {
+        font-size: 1.4em;
+    }
+    .category-section h2 {
+        font-size: 1.1em;
+    }
+    .product-image-wrapper {
+        width: 100px;
+        height: 100px;
+    }
+    .product-title {
+        font-size: 0.9em;
+    }
+    .product-description {
+        font-size: 0.75em;
+    }
+    .product-price {
+        font-size: 1em;
+    }
+    .category-list {
+        flex-direction: column; /* Apila los enlaces en pantallas muy estrechas */
+        gap: 5px;
+    }
+    .category-list li {
+        width: 100%; /* Permite que cada elemento ocupe todo el ancho disponible */
+        text-align: center; /* Centra el contenido dentro de cada li */
+    }
+    .category-shape {
+        width: calc(100% - 40px); /* Ajusta el ancho para que la píldora sea casi de borde a borde */
+        max-width: 200px; /* Limita el ancho máximo incluso en columnas */
+        margin: 0 auto; /* Centra la píldora */
+    }
+    .menu-category-nav {
+        padding: 5px 0;
+    }
+    .category-section {
+        scroll-margin-top: 120px; /* Ajuste final para sticky */
+    }
+    #scrollToTopBtn {
+        bottom: 15px;
+        right: 15px;
+        width: 40px;
+        height: 40px;
+        font-size: 1.2em;
+    }
+}

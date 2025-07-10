@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shahs of kabob</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-top">
+            <p>News!</p>
+        </div>
+        <nav class="navbar container">
+            <div class="dropdown main-nav-dropdown">
+                <button class="dropbtn" aria-label="Main Menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="dropdown-content">
+                    <div class="dropdown-header">
+                        <span class="title">MENU</span>
+                        <span class="close-btn">&times;</span>
+                    </div>
+                    <a href="index.html">Home</a>
+                    <a href="#about-us">About Us</a>
+                    <a href="#services">Services</a>
+                    <a href="#contact">Contact</a>
+                    <div class="dropdown-section-title">Menu</div>
+                    <a href="full-menu.html">Full Menu</a>
+                    <a href="#category2">Specials</a>
+                    <a href="#category3">Other</a>
+                    <div class="dropdown-divider"></div>
+                    <a id="login" href="login.html">Login</a>
+                </div>
+            </div>
+
+            <a href="index.html" class="logo-link"> 
+                <div class="logo">
+                    <img src="Imagen/shah+logo-1920w.webp" alt="Logo Shahs of Kabob">
+                    <span class="logo-name">Shahs of kabob</span>
+                </div>
+            </a>
+            <div class="nav-icons">
+                <a href="login.html" class="nav-icon"><i class="fas fa-user"></i></a>
+                <a href="cart.html" class="nav-icon"><i class="fas fa-shopping-cart"></i></a>
+            </div>
+        </nav>
+    </header>
+    
+    <div class="page-load-animation">
+        <section class="hero-section">
+            <div class="hero-content">
+                <p class="hero-text">Discover a world of flavors with <span class="highlight">Shahs of Kabob!</span></p>
+                <h1 class="hero-title">Your go-to Persian food restaurant</h1>
+                <p class="hero-subtitle">Discover the largest selection of Persian food.</p>
+                <div class="hero-buttons">
+                    <button class="hero-button">Shop Now</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="novelties-section container">
+            <h2>New on the Menu</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <img src="Imagen/Joojeh SMALL PLATE.jpg" alt="Joojeh Kabob">
+                    </div>
+                    <p class="product-title">One Joojeh Kabob (Marinated Chicken Skewer)</p>
+                    <p class="product-price">$13.00</p>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <img src="Imagen/Joojeh Sultani LARGE PLATE.jpg" alt="Joojeh Sultani">
+                    </div>
+                    <p class="product-title">(1) Joojeh Kabob (Marinated Chicken Skewer) & (1) Koobideh Kabob (Ground Beef & Lamb) Skewer</p>
+                    <p class="product-price">$18.00</p>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <img src="Imagen/Kashk Badejman (Vegan).jpg" alt="Kashk Badejman">
+                    </div>
+                    <p class="product-title">Fried Eggplant with Mint & Onion with Whey Dressing</p>
+                    <p class="product-price">$8.00</p>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <img src="Imagen/Koobideh LARGE PLATE.jpg" alt="Koobideh Kabob">
+                    </div>
+                    <p class="product-title">2 Skewers of Koobideh Kabob (Ground Beef & Lamb)</p>
+                    <p class="product-price">$18.00</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="video-section">
+            <video autoplay loop muted class="background-video">
+                <source src="Video/Video.webm" type="video/webm">
+                <source src="Video/Video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="video-overlay-content">
+                <h2>Explore the Persian Food Experience</h2>
+                <p>Discover our wide range of dishes</p>
+                <button class="hero-button">View all products</button>
+            </div>
+        </section>
+
+        <section class="newsletter-section">
+            <h3>Subscribe to our Portal</h3>
+            <p>Receive the latest news and exclusive offers directly in your inbox.</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Enter your Email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/shahsofkabob"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/shahsofkabobmiami/?hl=en"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

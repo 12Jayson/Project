@@ -1,0 +1,160 @@
+/* login-style.css - Estilos específicos para login.html */
+
+/* Los estilos generales del body y header se heredan de style.css para evitar redundancia.
+   Solo definimos aquí si hay un CAMBIO o un estilo ESPECÍFICO para login.html. */
+
+/* Header - Ajustes para la navbar en login.html */
+.navbar {
+    /* Asegura que el logo esté a la izquierda y los iconos a la derecha en login */
+    justify-content: space-between; 
+}
+
+/* --- LOGO Y NOMBRE PEGADOS A LA IZQUIERDA EN LOGIN --- */
+.navbar .logo {
+    margin-right: auto; /* Empuja los elementos siguientes (nav-icons) a la derecha */
+    margin-left: 0; /* Asegura que no tenga margen izquierdo si style.css lo centra */
+}
+
+/* OCULTAR EL BOTÓN DEL MENÚ DE HAMBURGUESA EN LA PÁGINA DE LOGIN */
+/* Esto apunta al contenedor del botón del menú en caso de que esté presente en el HTML */
+.navbar .dropdown.main-nav-dropdown {
+    display: none; /* Esto oculta completamente el dropdown principal en login.html */
+}
+
+
+/* Estilos específicos para la sección de Login */
+.login-page {
+    padding: 20px 15px;
+    background-color: #f2f2f2;
+}
+
+.login-container {
+    max-width: 400px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.login-container h1 {
+    font-size: 1.8em;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+    font-size: 0.9em;
+}
+
+.form-group input[type="email"],
+.form-group input[type="password"] {
+    width: 100%;
+    padding: 12px 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+.password-group {
+    display: flex;
+    align-items: center;
+}
+
+.forgot-password {
+    text-align: right;
+    margin-top: -10px;
+    margin-bottom: 20px;
+}
+
+.forgot-password a {
+    color: #6a0dad;
+    text-decoration: none;
+    font-size: 0.9em;
+}
+
+.forgot-password a:hover {
+    text-decoration: underline;
+}
+
+.login-button {
+    background-color: #6a0dad;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: #5a0c9c;
+}
+
+.signup-link {
+    margin-top: 25px;
+    font-size: 0.95em;
+    color: #555;
+}
+
+.signup-link a {
+    color: #6a0dad;
+    text-decoration: none;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos para la sección de suscripción (Newsletter Section) - Se mantienen consistentes */
+/* Estos estilos ya están bien definidos en style.css y no necesitan duplicarse,
+   a menos que se quiera un diseño diferente para el newsletter en la página de login.
+   Por ahora, se asume que heredan los de style.css. */
+
+/* Media queries para adaptar el diseño */
+@media (max-width: 600px) {
+    .newsletter-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .newsletter-form input,
+    .newsletter-form button {
+        width: 100%;
+        margin-left: 0;
+    }
+    .newsletter-form button {
+        margin-top: 10px;
+    }
+}
+
+@media (min-width: 768px) {
+    .login-container {
+        padding: 40px;
+    }
+    .login-container h1 {
+        font-size: 2.2em;
+    }
+    /* Asegurar que la barra de navegación en desktop se vea bien en login */
+    .navbar {
+        justify-content: flex-start; /* Alinea los elementos al inicio */
+        padding: 10px 30px; /* Ajusta el padding para desktop */
+    }
+    .nav-icons {
+        margin-left: auto; /* Empuja los iconos a la derecha cuando el logo está a la izquierda */
+        gap: 20px;
+    }
+}
